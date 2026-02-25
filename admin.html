@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | Eng. Abdel Nasser</title>
+    <link rel="stylesheet" href="admin-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="logo">ASU Sport</div>
+        <nav>
+            <div class="menu-item active"><i class="fas fa-chart-line"></i> الإحصائيات</div>
+            <div class="menu-item"><i class="fas fa-file-upload"></i> المحاضرات</div>
+            <div class="menu-item"><i class="fas fa-ad"></i> الإعلانات</div>
+        </nav>
+    </div>
+
+    <main class="content">
+        <header>
+            <h1>لوحة التحكم الإدارية</h1>
+            <div class="user-info">مرحباً، Eng. Abdel Nasser</div>
+        </header>
+
+        <section class="upload-box">
+            <h3>رفع محتوى جديد</h3>
+            <form id="uploadForm">
+                <input type="text" placeholder="عنوان المادة" required>
+                <input type="url" placeholder="رابط فيديو اليوتيوب" required>
+                <input type="url" placeholder="رابط البوربوينت (Google Drive)" required>
+                <button type="submit" class="btn-main">نشر المحتوى</button>
+            </form>
+        </section>
+    </main>
+
+    <script src="admin-logic.js"></script>
+</body>
+</html>

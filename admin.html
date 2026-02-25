@@ -1,40 +1,39 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard | Eng. Abdel Nasser</title>
+    <title>Admin Dashboard | ASU Sport</title>
     <link rel="stylesheet" href="admin-style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-
     <div class="sidebar">
         <div class="logo">ASU Sport</div>
         <nav>
-            <div class="menu-item active"><i class="fas fa-chart-line"></i> الإحصائيات</div>
-            <div class="menu-item"><i class="fas fa-file-upload"></i> المحاضرات</div>
-            <div class="menu-item"><i class="fas fa-ad"></i> الإعلانات</div>
+            <div class="menu-item active"><i class="fas fa-chart-line"></i> Statistics</div>
+            <div class="menu-item"><i class="fas fa-file-upload"></i> Lectures</div>
+            <div class="menu-item"><i class="fas fa-ad"></i> Ads Revenue</div>
         </nav>
     </div>
 
     <main class="content">
         <header>
-            <h1>لوحة التحكم الإدارية</h1>
-            <div class="user-info">مرحباً، Eng. Abdel Nasser</div>
+            <h1>Control Panel</h1>
+            <div class="user-info">Welcome, Eng. Abdel Nasser</div>
         </header>
 
         <section class="upload-box">
-            <h3>رفع محتوى جديد</h3>
+            <h3>Upload New Content</h3>
             <form id="uploadForm">
-                <input type="text" placeholder="عنوان المادة" required>
-                <input type="url" placeholder="رابط فيديو اليوتيوب" required>
-                <input type="url" placeholder="رابط البوربوينت (Google Drive)" required>
-                <button type="submit" class="btn-main">نشر المحتوى</button>
+                <input type="text" placeholder="Lecture Title" required>
+                <input type="url" placeholder="YouTube Video Link" required>
+                <input type="url" placeholder="PowerPoint Link (Drive)" required>
+                <button type="submit" class="btn-main">Publish Content</button>
             </form>
         </section>
     </main>
 
-    <script src="admin-logic.js"></script>
+    <script type="module" src="admin-logic.js"></script>
 </body>
 </html>

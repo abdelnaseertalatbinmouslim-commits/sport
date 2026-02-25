@@ -2,149 +2,174 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>منصة كلية علوم الرياضة - جامعة أسيوط</title>
+    <title>Elite Sport Science Platform</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
-        /* إعدادات الخطوط والتصميم العام */
-        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
 
         :root {
-            --primary-bg: #0f172a;
-            --accent-color: #38bdf8;
-            --glass-bg: rgba(255, 255, 255, 0.05);
-            --glass-border: rgba(255, 255, 255, 0.1);
+            --main-glow: #00f2ff;
+            --sub-glow: #7000ff;
+            --card-bg: rgba(15, 23, 42, 0.7);
         }
 
         body {
             margin: 0;
-            padding: 0;
+            background: #020617;
             font-family: 'Cairo', sans-serif;
-            background: radial-gradient(circle at top left, #1e293b, #0f172a);
-            color: #fff;
-            min-height: 100vh;
+            color: white;
             overflow-x: hidden;
         }
 
-        /* خلفية متحركة سحرية */
-        .bg-animate {
+        /* خلفية جزيئات هندسية */
+        .hero-bg {
             position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
+            width: 100vw; height: 100vh;
+            background: radial-gradient(circle at 50% 50%, #1e1b4b 0%, #020617 100%);
             z-index: -1;
-            background: linear-gradient(45deg, #0f172a 25%, #1e1b4b 50%, #0f172a 75%);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .hero-bg::before {
+            content: "";
+            position: absolute;
+            width: 200%; height: 200%;
+            background-image: url('https://www.transparenttextures.com/patterns/carbon-fibre.png');
+            opacity: 0.1;
         }
 
-        header {
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            backdrop-filter: blur(20px);
+        }
+
+        .main-container {
+            padding: 100px 8%;
             text-align: center;
-            padding: 60px 20px;
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--glass-border);
         }
 
-        .college-title {
-            font-size: 3rem;
+        .glitch-title {
+            font-size: 4rem;
             font-weight: 900;
-            background: linear-gradient(to right, #38bdf8, #818cf8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            margin-bottom: 10px;
+            text-transform: uppercase;
+            position: relative;
+            text-shadow: 0 0 20px var(--main-glow);
+            margin-bottom: 5px;
         }
 
-        .dept-title {
-            font-size: 1.5rem;
+        .subtitle {
+            font-size: 1.8rem;
             color: #94a3b8;
-            letter-spacing: 1px;
+            margin-bottom: 60px;
         }
 
-        /* شبكة الأقسام الاحترافية */
-        .container {
+        .grid-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            padding: 50px 10% ;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        .card {
-            background: var(--glass-bg);
-            border: 1px solid var(--glass-border);
-            padding: 40px;
-            border-radius: 24px;
-            text-align: center;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            backdrop-filter: blur(15px);
-            cursor: pointer;
+        .smart-card {
+            background: var(--card-bg);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 30px;
+            padding: 40px 20px;
+            transition: 0.5s;
             position: relative;
             overflow: hidden;
         }
 
-        .card:hover {
-            transform: translateY(-15px);
-            border-color: var(--accent-color);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        .smart-card:hover {
+            border-color: var(--main-glow);
+            transform: scale(1.05) translateY(-10px);
+            box-shadow: 0 0 30px rgba(0, 242, 255, 0.2);
         }
 
-        .card h3 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: var(--accent-color);
+        .smart-card i {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, var(--main-glow), var(--sub-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
-        .card p {
-            font-size: 0.95rem;
-            color: #cbd5e1;
-            line-height: 1.6;
+        .smart-card h3 { font-size: 1.6rem; margin: 15px 0; }
+
+        .btn-enter {
+            margin-top: 20px;
+            padding: 10px 25px;
+            border-radius: 50px;
+            background: transparent;
+            border: 1px solid var(--main-glow);
+            color: var(--main-glow);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .btn-enter:hover {
+            background: var(--main-glow);
+            color: #000;
         }
 
         footer {
-            text-align: center;
+            margin-top: 100px;
             padding: 40px;
-            font-size: 1.1rem;
-            color: #64748b;
-        }
-
-        .signature {
-            font-weight: bold;
-            color: #f43f5e;
+            background: rgba(0,0,0,0.5);
+            border-top: 1px solid var(--sub-glow);
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
 
-<div class="bg-animate"></div>
+<div class="hero-bg"></div>
 
-<header>
-    <h1 class="college-title">كلية علوم الرياضة - جامعة أسيوط</h1>
-    <p class="dept-title">قسم المناهج والتدريس للتربية الرياضية</p>
-</header>
+<nav>
+    <div style="font-weight: bold; font-size: 1.5rem;">ASU-SPORT</div>
+    <div><i class="fas fa-university"></i> جامعة أسيوط</div>
+</nav>
 
-<div class="container">
-    <div class="card">
-        <h3>المحاضرات</h3>
-        <p>بوابة الوصول الرقمي للمحتوى الأكاديمي التفاعلي.</p>
-    </div>
-    <div class="card">
-        <h3>الفيديوهات التعليمية</h3>
-        <p>مكتبة مرئية تشرح المهارات الرياضية والمناهج العملية.</p>
-    </div>
-    <div class="card">
-        <h3>سيرة الأساتذة</h3>
-        <p>تعرف على القامات العلمية القائمة على تدريس المقررات.</p>
-    </div>
-    <div class="card">
-        <h3>الجداول الدراسية</h3>
-        <p>التنظيم الزمني للمحاضرات والتدريبات العملية بالقسم.</p>
+<div class="main-container">
+    <h1 class="glitch-title animate__animated animate__fadeInDown">كلية علوم الرياضة</h1>
+    <p class="subtitle animate__animated animate__fadeInUp">قسم المناهج والتدريس للتربية الرياضية</p>
+
+    <div class="grid-layout">
+        <div class="smart-card animate__animated animate__zoomIn">
+            <i class="fas fa-book-open"></i>
+            <h3>المحاضرات الرقمية</h3>
+            <p>محتوى أكاديمي متطور يدعم التعلم الذكي.</p>
+            <button class="btn-enter">دخول</button>
+        </div>
+
+        <div class="smart-card animate__animated animate__zoomIn" style="animation-delay: 0.2s;">
+            <i class="fas fa-video"></i>
+            <h3>الفيديوهات التعليمية</h3>
+            <p>شرح عملي بتقنيات تصوير عالية الجودة.</p>
+            <button class="btn-enter">مشاهدة</button>
+        </div>
+
+        <div class="smart-card animate__animated animate__zoomIn" style="animation-delay: 0.4s;">
+            <i class="fas fa-user-tie"></i>
+            <h3>سيرة الأساتذة</h3>
+            <p>نخبة من خبراء علوم الرياضة بالجامعة.</p>
+            <button class="btn-enter">تفاصيل</button>
+        </div>
+
+        <div class="smart-card animate__animated animate__zoomIn" style="animation-delay: 0.6s;">
+            <i class="fas fa-calendar-alt"></i>
+            <h3>الجداول الدراسية</h3>
+            <p>جدول المحاضرات والتدريبات الميدانية.</p>
+            <button class="btn-enter">عرض</button>
+        </div>
     </div>
 </div>
 
-<footer>
-    تم التطوير بواسطة: <span class="signature">Eng. Abdel Nasser</span>
+<footer style="text-align: center;">
+    Designed & Developed By: <span style="color: var(--main-glow);">Eng. Abdel Nasser</span>
 </footer>
 
 </body>

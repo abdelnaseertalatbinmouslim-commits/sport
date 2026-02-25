@@ -1,0 +1,72 @@
+/* تصميم لوحة التحكم - المهندس عبد الناصر */
+body {
+    margin: 0;
+    display: flex;
+    background: #020617;
+    font-family: 'Cairo', sans-serif;
+    color: #f8fafc;
+}
+
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    border-left: 1px solid rgba(255,255,255,0.1);
+    padding: 30px 15px;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: #38bdf8;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.menu-item {
+    padding: 12px 20px;
+    margin: 8px 0;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.menu-item.active, .menu-item:hover {
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+.content {
+    flex: 1;
+    padding: 40px;
+}
+
+.upload-box {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 30px;
+    border-radius: 20px;
+    margin-top: 30px;
+}
+
+input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background: rgba(0,0,0,0.2);
+    border: 1px solid #1e293b;
+    border-radius: 8px;
+    color: white;
+}
+
+.btn-main {
+    background: #38bdf8;
+    color: #0f172a;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
